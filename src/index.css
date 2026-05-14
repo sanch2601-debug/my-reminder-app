@@ -1,0 +1,330 @@
+/* Базовые настройки */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* Главный контейнер */
+.app {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Заголовок */
+.app-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.app-header p {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* Форма добавления задачи */
+.task-form {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.task-form h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #374151;
+}
+
+.form-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.input-text {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #f9fafb;
+}
+
+.input-text:focus {
+  border-color: #6366f1;
+  background: white;
+}
+
+.input-datetime {
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #f9fafb;
+  color: #374151;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.input-datetime:focus {
+  border-color: #6366f1;
+  background: white;
+}
+
+/* Кнопки */
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: #6366f1;
+  color: white;
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.btn-mic {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 12px 14px;
+  font-size: 1.2rem;
+}
+
+.btn-mic:hover {
+  background: #e5e7eb;
+}
+
+.btn-mic.recording {
+  background: #fee2e2;
+  color: #ef4444;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Фильтры */
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 20px;
+  background: white;
+  color: #6b7280;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn.active {
+  border-color: #6366f1;
+  background: #6366f1;
+  color: white;
+}
+
+/* Список задач */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: #9ca3af;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.empty-state .emoji {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.empty-state p {
+  font-size: 1rem;
+}
+
+/* Карточка задачи */
+.task-item {
+  background: white;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: all 0.2s;
+  border-left: 4px solid transparent;
+}
+
+.task-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+.task-item.completed {
+  opacity: 0.6;
+  border-left-color: #10b981;
+}
+
+.task-item.overdue {
+  border-left-color: #ef4444;
+}
+
+.task-item.upcoming {
+  border-left-color: #f59e0b;
+}
+
+/* Чекбокс */
+.checkbox {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.2s;
+}
+
+.checkbox.checked {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
+}
+
+.checkbox:hover {
+  border-color: #6366f1;
+}
+
+/* Содержимое задачи */
+.task-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.task-datetime {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.task-datetime.overdue {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.task-datetime.upcoming {
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+/* Кнопка удаления */
+.btn-delete {
+  background: none;
+  border: none;
+  color: #d1d5db;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-delete:hover {
+  color: #ef4444;
+  background: #fee2e2;
+}
+
+/* Счётчик задач */
+.tasks-count {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
+
+/* Адаптация под телефон */
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .task-form {
+    padding: 16px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .btn-mic {
+    width: 100%;
+  }
+}
