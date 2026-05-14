@@ -423,4 +423,60 @@ body::before {
   .task-item {
     padding: 14px 16px;
   }
+}/* Группы задач по дате */
+.task-group {
+  margin-bottom: 24px;
+}
+
+.task-group-label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin: 0 0 8px 0;
+  padding-left: 4px;
+}
+
+.task-group-list {
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.task-group-list.dragging-over {
+  background: rgba(99, 102, 241, 0.06);
+}
+
+/* Обёртка перетаскиваемой задачи */
+.draggable-task {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.draggable-task.is-dragging {
+  opacity: 0.85;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+/* Ручка перетаскивания */
+.drag-handle {
+  cursor: grab;
+  color: #ccc;
+  font-size: 18px;
+  padding: 0 4px;
+  user-select: none;
+  flex-shrink: 0;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.drag-handle:hover {
+  color: #888;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
 }
